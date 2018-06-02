@@ -1,0 +1,41 @@
+cmake_minimum_required(VERSION 3.9)
+project(HW4-StudentPack)
+
+set(CMAKE_CXX_STANDARD 11)
+
+add_executable(HW4-StudentPack
+        Ambusher.cpp
+        Ambusher.h
+        Berserk.cpp
+        Berserk.h
+        Board.cpp
+        Board.h
+        BoardPrinter.h
+        Color.h
+        Coordinate.h
+        Dummy.cpp
+        Dummy.h
+        Entity.h
+        GameEngine.cpp
+        GameEngine.h
+        GameParser.cpp
+        GameParser.h
+        generator.py
+        main.cpp
+        Pacifist.cpp
+        Pacifist.h
+        Player.cpp
+        Player.h
+        Testable.h
+        TestableAllStream.cpp
+        TestableAllStream.h
+        TestableBoard.cpp
+        TestableBoard.h
+        TestableGameEngine.cpp
+        TestableGameEngine.h
+        TestableGameParser.cpp
+        TestableGameParser.h
+        TestablePlayer.cpp
+        TestablePlayer.h
+        Tracer.cpp
+        Tracer.h)

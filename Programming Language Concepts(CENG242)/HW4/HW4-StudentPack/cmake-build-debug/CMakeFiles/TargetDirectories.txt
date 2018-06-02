@@ -1,0 +1,3 @@
+C:/Users/Bright Lord/Desktop/242/HW4/HW4-StudentPack/cmake-build-debug/CMakeFiles/HW4-StudentPack.dir
+C:/Users/Bright Lord/Desktop/242/HW4/HW4-StudentPack/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Bright Lord/Desktop/242/HW4/HW4-StudentPack/cmake-build-debug/CMakeFiles/rebuild_cache.dir

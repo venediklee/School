@@ -1,0 +1,136 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Blockchain.cpp
+Blockchain.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Blockchain.h
+Utilizer.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Utilizer.h
+iomanip
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/iomanip
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Blockchain.h
+Koin.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Koin.h
+ostream
+-
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Koin.cpp
+iostream
+-
+Koin.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Koin.h
+Utilizer.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Utilizer.h
+iomanip
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/iomanip
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Koin.h
+ostream
+-
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Miner.cpp
+iomanip
+-
+Miner.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Miner.h
+Utilizer.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Utilizer.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Miner.h
+Blockchain.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Blockchain.h
+ostream
+-
+vector
+-
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Testable.h
+string
+-
+iostream
+-
+utility
+-
+cmath
+-
+Koin.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Koin.h
+Utilizer.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Utilizer.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableAllStream.cpp
+TestableAllStream.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableAllStream.h
+Miner.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Miner.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableAllStream.h
+Testable.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Testable.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableBlockchain.cpp
+sstream
+-
+TestableBlockchain.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableBlockchain.h
+Blockchain.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Blockchain.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableBlockchain.h
+Testable.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Testable.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableKoin.cpp
+iostream
+-
+sstream
+-
+TestableKoin.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableKoin.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableKoin.h
+Testable.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Testable.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableMiner.cpp
+sstream
+-
+TestableMiner.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableMiner.h
+Miner.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Miner.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableMiner.h
+Testable.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Testable.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/Utilizer.h
+randomc.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/randomc.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/main.cpp
+vector
+-
+TestableKoin.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableKoin.h
+TestableBlockchain.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableBlockchain.h
+TestableMiner.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableMiner.h
+TestableAllStream.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/TestableAllStream.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/mersenne.cpp
+randomc.h
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/randomc.h
+
+C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/randomc.h
+stdint.h
+-
+
