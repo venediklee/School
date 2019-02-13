@@ -1,3 +1,0 @@
-C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/cmake-build-debug/CMakeFiles/HW3_StudentPack.dir
-C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Bright Lord/Desktop/242/HW3/HW3-StudentPack/HW3-StudentPack/cmake-build-debug/CMakeFiles/rebuild_cache.dir
