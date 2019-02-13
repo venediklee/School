@@ -1,0 +1,1 @@
+currently CUDA version of thrust implementation is wrong 
