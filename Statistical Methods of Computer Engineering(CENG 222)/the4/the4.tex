@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Ahmet Dara VEFA \\
+Id Number : 2237899 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+
+Problem size $N \geq 0.25 (z_{a/2}/{\epsilon})^2 \xrightarrow{in\ this\ question} N \geq 0.25 (z_{0.025}/{\0.005})^2=38416$.\\
+Probability of $W \geq 2*S$ is $\int_{0}^{\infty} \int_{0}^{w/2} wse^{-w-s}$ is $P = 0.259$ \\
+In MATLAB we count the number of minions that satisfy the given equation and divide by N = 38416. Result is about 0.56
+
+\section*{Answer 2}
+Problem size is the same with Q1.\\
+We take integral of the equation with respect to S from 0 to infinity. That gives us the density function for weight. Then we use rejection method to estimate the total weight of the minions in 5 hours. \\
+The result is about 99.69
+
+\section*{Answer 3}
+
+Problem size is the same with Q1.\\
+We need to get random variables $exp(2)$ and $N(0,1)$.\\
+Since exp function needs Expected Value as argument we give E(x)=1/lambda=1/2=0.5\\
+The result is about 0.24
+
+
+\end{document}

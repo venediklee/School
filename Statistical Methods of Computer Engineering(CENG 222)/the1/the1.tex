@@ -1,0 +1,162 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+%misc libraries goes here
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+\begin{document}
+
+\section*{Student Information } 
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name : Ahmet Dara VEFA \\
+Id Number : 2237899 \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+
+\subsection*{a.}
+Without assuming independence: \\
+$P(Z=0 | X=5, Y=10)=P(Z=0 \cap (X=5,Y=10)) \ / \ P(X=5,Y=10) = 0.075/(0.075+0.050)=0.6$ \\ 
+
+\subsection*{b.}
+$f(x,y,z)=$joint distribution of x,y and z. Just do the summing: \\
+$P_x(x)=\sum_y \sum_z f(x,y,z)$ \\
+$P_x(3)=\sum_y \sum_z f(3,y,z)=f(3,10,0)+f(3,10,1) + f(3,20,0) + f(3,20,1)+f(3,30,0)+f(3,30,1)=0.025+0.025+0.03+0.02+0.05+0.15=0.3$ \\
+$P_x(5)=\sum_y \sum_z f(5,y,z)=0.075+0.050+0.025+0.030+0.020+0.2=0.4$ \\
+$P_x(7)=\sum_y \sum_z f(7,y,z)=0.04+0.06+0.02+0.050+0.025+0.1=0.3$ \\
+To check if the result is correct: \\
+$P_x(3)+P_x(5)+P_x(7)=1$, hence the result is correct
+\subsection*{c.}
+$\mu=E(X)=\sum_x xP(x)=3*0.3+5*0.4+7*0.3=5 $ \\
+$\sigma^2=Var(X)=\sum_x (x-\mu)^2P(x)=4P(3)+0*P(5)+4P(7)=2.4  $ \\
+\subsection*{d.}
+$P(X|Z=1)=P(X \cap Z=1) \ / \ P(Z=1)  $ \\
+$P_z(1)=\sum_x \sum_y f(x,y,1)=0.685  $(I won't show the sums etc.) \\
+$P(X=3 \cap Z=1)\ / \ P(Z=1)=0.195/0.685=0.285  $ \\
+$P(X=5 \cap Z=1)\ / \ P(Z=1)=0.280/0.685=0.408 $ \\
+$P(X=7 \cap Z=1)\ / \ P(Z=1)=0.210/0.685=0.307 $ \\(sums of the last 3 values are 1 so it checks)
+\subsection*{e.}
+$\mu =E(X |Z=1)=\sum_x xP(x|z=1)= 3*0.285+5*0.408+7*0.307 = 5.044  $\\
+$\sigma^2=Var(x)=E_x (x-\mu)^2P(x)=4.178*P_x(3|Z=1)+0.002*P(5|Z=1)+4.178*P(7|Z=1)=1.190+0.001+1.190=2.381  $
+
+"\section*{Answer 2}
+
+\subsection*{a.}
+we know that $\Sigma_k P_X(k)=1 \ and \ \Sigma_k P_Y(k)=1$ \\
+$ since \ k\geq 1:$\\
+$C_1\Sigma_{k=1}^{\infty}(1/2)^k=C_1({1-1/2^\infty\over 1-1/2}-1)=C_1(2-1)=C_1$ \\
+$\xrightarrow{using \ first\ equation} C_1=1$\\
+\\
+$C_2\Sigma_{k=1}^{\infty}(1/2)^k/k \xrightarrow{m=1/2}C_2\Sigma_{k=1}^{\infty}{m^{k+1}\over k+1}=C_2h(m) $ take derivative \\ 
+${dh(m) \over dm}=C_2\Sigma_{k=0}^{\infty}m^{k}={1-m^\infty \over 1-m}={1 \over 1-m} $ now take integral\\
+$h(m)=\int{1 \over 1-m}dm=-ln(1-m)\xrightarrow{m=1/2}-ln(1/2)=ln(2)$\\
+using the second equation:
+$C_2ln(2)=1\longrightarrow C_2=1/ln(2)$
+
+\subsection*{b.}
+$P(X \ even)+P(x \ odd)=1$\\
+$P(x=2m)+P(x=2m+1)=1$\\
+$P(x=2m)=\Sigma_{m=1}^{\infty}(1/2)^{2m}=\Sigma_{m=1}^{\infty}(1/4)^{m}={1-1/4^m \over1-1/4 }-1=1/3=P(x\ even)$
+\subsection*{c.}
+$P(x \ odd )=1-P(x \ even)=2/3$\\
+$P(X+Y=6| X \ odd) \xrightarrow{using\ bayes\ rule}P(X \ odd | X+Y=6)P(X+Y=6)/P(X \ odd)$\\
+$X+Y=6 \Longrightarrow (x,y)=\{(1,5),(2,4),(3,3),(4,2),(5,1)  \}$\\
+Using the above cases $P(x \ odd | X+Y=6)=0.672$\\
+$P(X+Y=6)\xrightarrow{using\  above\  cases\  as\  basis}(1/ln2)(2^{-1}2^{-5}/5+2^{-2}2^{-4}/4+2^{-3}2^{-3}/3+2^{-4}2^{-2}/2+2^{-5}2^{-1}/1)=(1/ln2)*2^{-6}(1/5+1/4+1/3+1/2+1)=0.052$\\
+now calculate the result: \\
+${0.672*0.052\over 2/3}=0.0524$
+\subsection*{d.}
+$(x,y)=\{(1,5),(2,4),(4,2),(5,1) \}$\\
+$P(X=b_1,Y=b_2)\xrightarrow{using\ above\ cases\ as \ basis}(1/ln2)(2^{-1}2^{-5}/5+2^{-2}2^{-4}/4+2^{-4}2^{-2}/2+2^{-5}2^{-1}/1)=(1/ln2)2^{-6}(1/5+1/4+1/2+1)=0.044$
+
+
+
+\section*{Answer 3}
+
+\subsection*{a.}
+if $P_{x,y}=P(x)*P(y)\ \forall \ x,y  $ they are independent(I won't show $P_{x,y}(a,b)=\sum_z  f(a,b,z) $ \\
+$ P{x,y}(3,10)=0.05=?=0.0825=0.3*0.275=P_x(3)*P_y(10)  $ since it is not equal we don't need to show the rest. They are dependent.
+\subsection*{b.}
+Let A be the probability that we get 5 when we toss a 6 sided die. A is independent of itself. \\
+$P(A)=1/6  $ so it is false.
+\subsection*{c.}
+$P_{A,B}=?=P_A(a)*P_B(b) \  \forall \ a,b  $ \\
+if $P(A)=0$\\
+$P_{A,B}(0,b)=0 \  and \ P(A)*P(B)=0  $  so $P(A)=0 \ checks$\\
+if $P(A)=1$ \\
+$P_{A,B}(1,B)=P(B) \ and \ P(A)*P(B)=1*P(B)=P(B)$ so $P(A)=1 \ checks$ \\
+so it is true
+
+\section*{Answer 4}
+
+\subsection*{a.}
+$P(G=n-1+m | G>n-1)=P(G=n-1+m \cap G>n-1) \ / \ P(G>n-1)$\\
+$P(G>n-1)=1-P(G \leq n-1)=1- \sum_{k=1}^{n-1} \xrightarrow{using\ geometric\ progression\ formula} 1 - p{1-(1-p)^{n-1} \over1-(1-p)}=(1-p)^{n-1}$\\
+$P(G=n-1+m \cap G>n-1)=P(G=n-1+m)  $ since $(G=n-1+m\  \cap \ G>n-1)=(G=n-1+m)$ \\
+$P(G=n-1+m)=(1-p)^{n+m-2}p $ \\ 
+so ${p(1-p)^{n+m-2} \over(1-p)^{n-1}}=?=(1-p)^{m-1}p \Longrightarrow (1-p)^{n-1}=?=(1-p)^{n-1}$ checks.
+\subsection*{b.}
+I already showed it in 4a but here is the formulas: \\
+$P(G \leq n)= \sum_{k=1}^{n} \xrightarrow{using\ geometric\ progression\ formula}  p{1-(1-p)^{n} \over1-(1-p)}=1-(1-p)^{n}$\\
+\subsection*{c.}
+$P(65 \leq G \leq 75)=P(G\leq 75)-P(G\leq 64)=(1-(1-p)^{75})-(1-(1-p)^{64})=(1-3*(1/6)^3)^{75}-(1-3*(1/6)^3)^{64}$
+\section*{Answer 5}
+
+\subsection*{a.}
+n=20,000 and p=1/10,000 \\
+$P(x=3)=\binom{20,000}{3}(1/10,000)^3(9,999/10,000)^{19,997} $ 
+\subsection*{b.}
+Use Poisson to compute.
+$\lambda=np=2$ \\
+$P_{Poission}(X=3)=F_{Poission}(3)-F_{Poission}(2)=0.857-0.677=0.18$ \\
+I chose poission since $n \geq 30$ and $p\leq 0.05$. Poisson approximation is really close to real value(for big n small p)
+
+
+\section*{Answer 6}
+I'll use $X=O$ for simplicity\\
+\subsection*{a.}
+
+$
+E[X^n]  = \sum_{k=0}^\infty k^n \; P(X=k) = \sum_{k=1}^\infty k^n  e^{-\lambda}  \frac{\lambda^k}{k!} 
+ = \sum_{k=1}^\infty k^{n-1}  e^{-\lambda}  \frac{\lambda^k}{(k-1)!} 
+ = \lambda \sum_{k=1}^\infty k^{n-1}  e^{-\lambda}  \frac{\lambda^{k-1}}{(k-1)!} 
+ = \lambda \sum_{m=0}^\infty (m+1)^{n-1}  e^{-\lambda}  \frac{ \lambda^m}{m!}\\
+ = \lambda E[(X+1)^{n-1}]
+$
+\subsection*{b.}
+$
+E[X^3] = \lambda E[(X+1)^2] = \lambda E[X^2 + 2X + 1] = \lambda E[X^2] + 2 \lambda E[X] + \lambda \\
+= \lambda^2(\lambda+1) + 2\lambda^2 + \lambda = \lambda^3 + 3\lambda^2 + \lambda.
+$
+
+\section*{BONUS 1}
+
+\section*{BONUS 2}
+
+\subsection*{a.}
+
+\subsection*{b.}
+
+\subsection*{c.}
+
+\subsection*{d.}
+
+
+\end{document}
+
+​
+

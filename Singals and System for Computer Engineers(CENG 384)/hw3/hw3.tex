@@ -1,0 +1,293 @@
+\documentclass[10pt,a4paper, margin=1in]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{tkz-euclide}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+\begin{filecontents}{q1a.dat}
+ k   ak
+ -3  0.5
+ -2  0
+ -1 0.5
+ 0  1
+ 1  0.5
+ 2  0  
+ 3  0.5
+ \end{filecontents}
+ 
+ \begin{filecontents}{q1b.dat}
+ k   ak
+ -3 0.559
+ -2 0.25
+ -1 0.599
+ 0  0.75
+ 1  0.559
+ 2  0.25
+ 3  0.599
+ \end{filecontents}
+ 
+  \begin{filecontents}{q2.dat}
+ n   x[n]
+ -3 0
+ -2 0
+ -1 2
+ 0  2
+ 1  0
+ 2  0
+ 3  2
+ 4  2
+ \end{filecontents}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+ % Write both of your names here. Fill exxxxxxx with your ceng mail address.
+ \author{
+  UZUN, Yunus Emre\\
+  \texttt{e2172104@ceng.metu.edu.tr}
+  \and
+  VEFA, Ahmet Dara\\
+  \texttt{e2237899@ceng.metu.edu.tr}
+}
+\title{CENG 384 - Signals and Systems for Computer Engineers \\
+Spring 2018-2019 \\
+Written Assignment 3}
+\begin{document}
+\maketitle
+
+\noindent\rule{19cm}{1.2pt}
+
+\begin{enumerate}
+
+\item 
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q1a
+     x[n] is a periodic signal with period N=4. To find Fourier series coefficients we use the formula \\ $a_k = 1/N\ \sum_{n = <N>} x[n]e^{-jkw_0n}$ where N = 4 and $w_0 = 2\pi / T = \pi /2$
+    \begin{center}
+       $a_0 = 1/4\sum_{n = <N>} x[n]e^{-j0\pi/2n} = 1/4$ \\ $ $ \\
+       $a_1 = 1/4\sum_{n = <N>} x[n]e^{-jw_0n} = 1/4(e^{-j(\pi/2)} + 2e^{-2j(\pi/2)} + 3e^{-3j(\pi/2)}) = -1/2$
+       $a_2 = 1/4\sum_{n = <N>} x[n]e^{-j2w_0n} = 1/4(e^{-j2(\pi/2)} + 2e^{-4j(\pi/2)} + 3e^{-6j(\pi/2)}) = 0$
+       $a_3 = 1/4\sum_{n = <N>} x[n]e^{-j3w_0n} = 1/4(e^{-j3(\pi/2)} + 2e^{-6j(\pi/2)} + 3e^{-9j(\pi/2)}) = -1/2$
+    \end{center}
+    Since our signal is periodic $a_n = a_{n+N}$ . 
+    \begin{figure} [H]
+    \centering
+    \begin{tikzpicture}[scale=1.0] 
+      \begin{axis}[
+          axis lines=middle,
+          xlabel={$k$},
+          ylabel={$\boldsymbol{a_k}$},
+          xtick={ -3, ..., 3},
+          ytick={-1,0,1},
+          ymin=-2, ymax=2,
+          xmin=-4, xmax=4,
+          every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+          every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+          grid,
+        ]
+        \addplot [ycomb, black, thick, mark=*] table [x={k}, y={ak}] {q1a.dat};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$k$ vs. $|a_k|$.}
+    \label{fig:q1a}
+\end{figure}
+        
+    \item %write the solution of q1b
+        (i) \\
+        \begin{center}
+            $y[n] = x[n] - \sum_{k=-\infty}^{\infty}\delta[n-3+4k] $ \\
+        \end{center}
+        (ii) To find the coefficient, it is enough to find $a_0,a_1,a_2,a_3$. Again using the formula in the part a;
+        \begin{center}
+            $a_0 =  1/4\sum_{n = <N>} y[n]e^{-j0\pi/2n} = 3/4$ \\
+            $a_1 =  1/4\sum_{n = <N>} y[n]e^{-j\pi/2n} = -1/4(j+2)$ \\
+            $a_2 =  1/4\sum_{n = <N>} y[n]e^{-j2\pi/2n} = 1/4$ \\
+            $a_3 =  1/4\sum_{n = <N>} y[n]e^{-j0\pi/2n} = 1/4(j-2)$ \\
+        \end{center}
+        \begin{figure} [H]
+    \centering
+    \begin{tikzpicture}[scale=1.0] 
+      \begin{axis}[
+          axis lines=middle,
+          xlabel={$k$},
+          ylabel={$\boldsymbol{a_k}$},
+          xtick={ -3, ..., 3},
+          ytick={-1,0,1},
+          ymin=-2, ymax=2,
+          xmin=-4, xmax=4,
+          every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+          every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+          grid,
+        ]
+        \addplot [ycomb, black, thick, mark=*] table [x={k}, y={ak}] {q1b.dat};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$k$ vs. $|a_k|$.}
+    \label{fig:q1b}
+\end{figure}
+\end{enumerate}
+\item
+Using A: \\
+Since period is 4 \\
+$ w_0 =2 \pi / 4= \pi / 2 $ \\
+and $ x[n]=x[n+4] $ \\
+\\
+Using B and previous findings: \\
+$2 \times \Sigma_{k=0}^{3}x[k]=8 $(include 0 in the interval to make the calculations a bit easier) \\
+hence $ x[0]+x[1]+x[2]+x[3]=4$ \\
+\\
+Using C and previous findings: \\
+$a_{-3}=a_1$  \\ 
+$a_3=a_{11}$ \\
+$a_{-3}=a_{15}^* \longrightarrow a_1=a_3^*  $\\
+$|a_1-a_{11}|=|a_1-a_3|=1  $\\
+\\
+Using D and previous findings: \\
+We know that one of the $a_0 \ a_1 \ a_2 \ a_3 $ is 0; \\
+\\
+Using E and previous findings: \\
+First convert complex exponentials to cos and sin \\
+$ e^{-j\pi k/2}= cos(-\pi k /2) + jsin(-\pi k /2)$ \\
+$ e^{-j3\pi k/2}=cos(-3\pi k/2)+jsin(-3\pi k/2) $ \\
+We can convert terms with $(3\pi k/2)$ to terms with $ (\pi k/2)$ by removing $2\pi k$ from each term : \\
+$sin(3\pi k/2)=-sin(\pi k/2)$\\
+$cos(3\pi k/2)=cos(\pi k/2)$\\
+Now find the sum of complex exponentials given in e: \\
+$ e^{-j\pi k/2} +  e^{-j3\pi k/2}=cos(\pi k /2)-jsin(\pi k /2)+cos(\pi k /2)+jsin(\pi k /2)=2cos(\pi k /2)$\\
+Now we have:\\
+$\Sigma_{k=0}^{3}(x[k]2cos(\pi k /2))=4$ , open the sum(k=1 \& k=3 terms are 0 because of cos):\\
+$2x[0]-2x[2]=4 \Longrightarrow x[0]-x[2]=2$\\
+\\
+Now lets find $a_k$'s for k=0,1,2,3:\\
+$a_k= \frac{1}{N} \Sigma_{n=<N>}^{} x[n](e^{-jkw_0n}) \xrightarrow{in \ our \ case(N=4, \ w_0=\pi/2)} a_k= \frac{1}{4} \Sigma_{n=0}^{3} x[n](e^{-jkn\pi/2})$\\
+So\\
+$a_0=1/4(x[0]+x[1]+x[2]+x[3]) \xrightarrow{using\ part\ B} = 1/4 \times 4=1$\\
+\\
+Since $a_1$ and $a_3$ are conjugate complex numbers let $a_1=x+jy \Longrightarrow a_3=x-yj$\\
+$|a_1-a_3|=|2yj|=1$(using part C)\\
+Since $a_1$ and $a_3$ have imaginary parts they can't be 0, and since $a_0$ is not 0, $a_2$ must be zero:\\
+$a_2=1/4(x[0]-x[1]+x[2]-x[3])= 0$\\
+\\
+Now we need to find $a_1$ or $a_3$:\\
+$a_1=1/4(x[0]+x[1]e^{-jw_0}+x[2]e^{-2jw_0}+x[3]e^{-3jw_0}) \xrightarrow{convert\ to\ sin\& cos\ form\ with\ w_0=\pi/2} 1/4(x[0]+x[1](cos(\pi/2)-jsin(\pi/2))  +x[2](cos(2\pi/2)-jsin(2\pi/2))  +x[3](cos(3\pi/2)-jsin(3\pi/2)))$, simplify:\\
+$a_1=1/4(x[0]-jx[1]-x[2]+jx[3])$\\
+\\
+Since $a_3$ is conjugate of $a_1$:\\
+$a_3=1/4(x[0]+jx[1]-x[2]-jx[3])$\\
+\\ \\
+Now we have to find x[0],x[1],x[2],x[3]:\\
+\\
+In part C we found that:\\
+$|a_1-a_3|=1$, put the values in:\\
+$|(1/4)(2j)(x[3]-x[1])|=1$, simplify:\\
+$|j(x[3]-x[1])|= |x[3]-x[1]|=2$\\
+\\
+We can get two relations of x[n] from $a_0+-a_2$ since we found their values:\\
+$a_0-a_2=1/4(2x[1]+2x[3])=1 \Longrightarrow x[1]+x[3]=2$\\
+$a_0+a_2=1/4(2x[0]+2x[2])=1 \Longrightarrow x[0]+x[2]=2$\\
+We found $ x[0]-x[2]=2 $ in part E, using this equation and previous 2 equations we find:\\
+$x[0]=2 $\\
+$x[2]=0$\\
+We found $|x[3]-x[1]|=2$ previously, lets assume x[3]>x[1] and take it out, then we can find:\\
+$x[1]=0$\\
+$x[3]=2$(note that x[3] and x[1] will change depending on our assumption)\\
+Now we have found all the values we can draw(x[0]=2,x[1]=0,x[2]=0,x[3]=2)\\
+
+        \begin{figure} [H]
+    \centering
+    \begin{tikzpicture}[scale=1.0] 
+      \begin{axis}[
+          axis lines=middle,
+          xlabel={$n$},
+          ylabel={$\boldsymbol{x[n]}$},
+          xtick={ -3, ..., 4},
+          ytick={-2,-1,0,1,2},
+          ymin=-3, ymax=3,
+          xmin=-5, xmax=5,
+          every axis x label/.style={at={(ticklabel* cs:1.05)}, anchor=west,},
+          every axis y label/.style={at={(ticklabel* cs:1.05)}, anchor=south,},
+          grid,
+        ]
+        \addplot [ycomb, black, thick, mark=*] table [x={n}, y={x[n]}] {q2.dat};
+      \end{axis}
+    \end{tikzpicture}
+    \caption{$n$ vs. $x[n]$.}
+    \label{fig:q2}
+\end{figure}
+
+\item 
+it is given that:\\
+$x(t)=h(t) * (x(t)+r(t))$\\
+\\
+Apply Fourier Transform:\\
+$X(jw)=H(jw)(X(jw)+R(jw)) \longleftarrow$ since convolution is equal to multiplication in fourier transform \\
+$X(jw)=H(jw)X(jw)+H(jw)R(jw)$, it is given that $R(jw)=0\ when\ |w| \leq K2\pi/T$\\
+$X(jw)=H(jw)X(jw) \Longrightarrow H(jw)=1 \ when\ |w| \leq K2\pi/T$\\
+\\
+Apply inverse F.T to find h(t):\\
+$h(t)=\frac{1}{2\pi}\int_\infty^\infty H(jw)e^{jwt}dw = \frac{1}{2\pi}\int_{-K2\pi/T}^{K2\pi/T} e^{jwt}dw$, take it out of the integral and we get:\\
+$h(t)=\frac{1}{2\pi}(\frac{e^{jwt}}{jt}|_{w=-K2\pi/T}^{K2\pi/T})=\frac{1}{2\pi}(\frac{e^{jtK2\pi/T}}{jt}-\frac{e^{-jtK2\pi/T}}{jt})$, convert to sin\& cos form:\\
+$h(t)=\frac{1}{\pi t}sin(\frac{K2\pi t}{T})$
+
+\item
+\begin{enumerate}
+    \item 
+    The differential equation of the block diagram is; \\
+    \begin{center}
+        $y(t) = \int [\int -6y(t)+x(t)dt] - 5y(t)+4x(t) dt$ \\
+        $y'(t) = [\int -6y(t)+x(t)dt] - 5y(t)+4x(t) $ \\
+        $y''(t) = -6y(t)+x(t) - 5y'(t)+4x'(t) $ \\
+    \end{center}
+    We are asked to find frequency response of the system above. The input is $e^{jwt}$ the frequency response H(jw). Hence, $y(t) = H(jw)e^{jwt}$ . By substituting necessary values;
+    \begin{center}
+        $y''(t) = -6y(t)+x(t) - 5y'(t)+4x'(t) $ \\ $ $ \\
+        $(jw)^2e^{jwt}H(jw) = -6e^{jwt}H(jw) + e^{jwt} - 5(jw)e^{jwt}H(jw) + 4jwe^{jwt}$ \\ $ $ \\
+        $H(jw)e^{jwt}((jw)^2 + 6 + 5jw) = e^{jwt}(1+ 4jw)  $ \\ $ $ \\
+        $H(jw) = \frac{(1+ 4jw) }{(jw)^2 + 5jw + 6}$ \\ $ $ \\
+    \end{center}
+    \item 
+    To find the impulse response of the system we need to take inverse Fourier transform of the impulse response. 
+    \begin{center}
+        $H(jw) = \frac{(1+ 4jw) }{(jw)^2 + 5jw + 6}$ \\ $ $ \\
+        $H(jw) = \frac{A}{(jw + 2)} + \frac{B}{(jw + 3)}$ \\ $ $ \\
+        $Ajw + Bjw = 4jw$ \\ $ $ \\
+        $3A + 2B = 1$ \\ $ $ \\
+    \end{center}
+    Equations implies that A = -7 and B = 11, hence $H(jw) =  \frac{-7}{(jw + 2)} + \frac{11}{(jw + 3)}$ .Take inverse Fourier by using the table we get, $h(t) = 11e^{-3t}u(t)-7e^{-2t}u(t)$ . \\
+    \item 
+    To find y(t) when input is $x(t) = 1/4e^{-t/4}u(t)$. First we can find Fourier transform of x(t):
+    \begin{center}
+        Table says: $e^{|a|t}u(t) \longrightarrow \frac{1}{|a|+jw}$ \\$ $ \\
+        So : $X(jw) = 1/4\times\frac{1}{1/4+jw}$ \\
+    \end{center}
+    We can find Y(jw) by using the property : $Y(jw) = H(jw)\times X(jw)$ .
+    \begin{center}
+        $Y(jw) = (\frac{-7}{(jw + 2)} + \frac{11}{(jw + 3)}) \times (1/4\times\frac{1}{1/4+jw})$\\$ $ \\
+         $Y(jw) = \frac{1}{(jw + 2)(jw+3)}$\\$ $ \\
+    \end{center}
+    Finally by taking inverse Fourier of Y(jw) we can find y(t).
+    \begin{center}
+        $Y(jw) = \frac{1}{(jw + 2)(jw+3)}$\\$ $ \\
+        $Y(jw) = \frac{-1}{(jw + 2)}+\frac{1}{(jw+3)}$\\$ $ \\
+        Using table : $y(t) = e^{-3t}u(t) - e^{-2t}u(t)$\\$ $ \\
+        $y(t) = (e^{-3t} - e^{-2t})u(t)$
+    \end{center}
+\end{enumerate}
+\end{enumerate}
+\end{document}
+

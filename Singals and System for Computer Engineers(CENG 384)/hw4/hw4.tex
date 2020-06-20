@@ -1,0 +1,102 @@
+\documentclass[10pt,a4paper, margin=1in]{article}
+\usepackage{fullpage}
+\usepackage{amsfonts, amsmath, pifont}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=10mm,
+ right=10mm,
+ top=10mm,
+ bottom=10mm,
+ }
+ % Write both of your names here. Fill exxxxxxx with your ceng mail address.
+ \author{
+  UZUN, Yunus Emre\\
+  \texttt{e2172104@ceng.metu.edu.tr}
+  \and
+  VEFA, Ahmet Dara\\
+  \texttt{e2237899@ceng.metu.edu.tr}
+}
+\title{CENG 384 - Signals and Systems for Computer Engineers \\
+Spring 2018-2019 \\
+Written Assignment 4}
+\begin{document}
+\maketitle
+
+
+
+\noindent\rule{19cm}{1.2pt}
+
+\begin{enumerate}
+
+\item 
+    \begin{enumerate}
+    % Write your solutions in the following items.
+    \item %write the solution of q1a
+    $y[n]=2x[n]+\frac{3}{4}y[n-1]-\frac{y[n-2]}{8} $
+    %%e^{-jw}Y(e^{jw})-\frac{1}{8}e^{-2jw}Y(e^{jw}) $
+    \item %write the solution of q1b
+    $Y(e^{jw})=2X(e^{jw})+\frac{3}{4}e^{-jw}Y(e^{jw})-\frac{1}{8}e^{-2jw}Y(e^{jw}) $\\
+    $Y(e^{jw})(1-\frac{3}{4}e^{-jw}+\frac{e^{-2jw}}{8})=2X(e^{jw}) $\\
+    $\frac{Y(e^{jw})}{X(e^{jw})}=H(e^{jw})= \frac{1}{(1-\frac{3}{4}e^{-jw}+\frac{e^{-2jw}}{8})}=\frac{-4}{e^{-jw}-2}+\frac{4}{e^{-jw}-4}=2\frac{1}{1-1/2e^{-jw}}-\frac{1}{1-1/4e^{-jw}} $
+    \item %write the solution of q1c
+    take inverse fourier transform of H \\
+    $h[n]=2(\frac{1}{2})^nu[n]-(\frac{1}{4})^nu[n]$
+    
+    \item %write the solution of q1d
+    $X(e^{jw})=\frac{1}{1-1/4e^{-jw}}$\\
+    $\frac{Y(e^{jw})}{\frac{1}{1-1/4e^{-jw}}}=\frac{1}{(1-\frac{3}{4}e^{-jw}+\frac{e^{-2jw}}{8})}\xrightarrow{}Y(e^{jw})=(\frac{1}{1-1/4e^{-jw}})(2\frac{1}{1-1/2e^{-jw}}-\frac{1}{1-1/4e^{-jw}})=-4\frac{1}{1-1/4e^{-jw}}+8\frac{1}{1-1/2e^{-jw}}-2(\frac{1}{1-1/4e^{-jw}})^2$\\
+    take inverse fourier transform\\
+    $y[n]=-4(\frac{1}{4})^nu[n]+8(\frac{1}{2})^nu[n]-2(n+1)(\frac{1}{4})^nu[n]$
+    \end{enumerate}
+
+
+\item %write the solution of q2
+$ H(e^{jw})= \frac{-3}{e^{-jw}-3}+2\times(\frac{4}{e^{-jw}-4})=\frac{1}{1-1/3e^{-jw}}-2\times(\frac{1}{1-1/4e^{-jw}}) $\\
+take inverse fourier transform of H\\
+$h[n]=\frac{1}{3}^nu[n]-2\times(\frac{1}{4})^nu[n]$\\
+we know $h_1[n]=\frac{1}{3}^nu[n]$, so $h_2[n]=-2\times(\frac{1}{4})^nu[n]$
+
+\item      
+    \begin{enumerate}
+    \item %write the solution of q3a
+    separate x into 2 parts:\\
+    $x_1(t)=\frac{sin2\pi t}{\pi t}$ and $x_2(t)=cos3\pi t $\\
+    take their fourier transform:\\
+    $X_1(jw)=1$ if $|w|<2\pi$ and 0 otherwise\\
+    $X_2(jw)=\pi [\delta(w-3\pi)+\delta(w+3\pi)]$\\
+    so fourier transform of x(t) is $X_1(t)+X_2(t)$
+    \item %write the solution of q3b
+    We found Nyquist Freq. as $3\pi$\\
+    $w_s=2w_m\xrightarrow{w_m=3\pi}w_s=6\pi$\\
+    $T=\frac{2\pi}{w}\xrightarrow{w_s=6\pi}1/3\xleftarrow{}sampling \ rate$
+    \item
+    $X_p(jw)=\frac{1}{\frac{1}{3}}\Sigma_{k=-\infty}^{\infty}X(j(w-6\pi k))=3\Sigma_{k=-\infty}^{\infty}X(j(w-6\pi k))$
+    \end{enumerate}
+
+\item 
+    \begin{enumerate}
+    \item %write the solution of q4a
+    $N=\frac{2\pi}{w_w}\xrightarrow{w_s=\pi}2$\\
+    $X_p(jw)=\frac{1}{t}\Sigma_{\forall k}X(j(w-kw_s))$\\
+    $X_d(e^{jw})=X_p(\frac{jw}{T})$\\
+    $X_d(e^{jw})=\frac{2w}{\pi}$ if $|w|\leq \frac{\pi}{2}$ 0 otherwise\\
+    $X_d(e^{jw})=X_d(e^{j(w+N)})$
+    
+    \item %write the solution of q4b
+    $h[n]=cos\pi n = \frac{1}{2}(e^{j\pi n}+e^{-j\pi n})$, fourier transform of $e^{jw_0 n}$ is $ 2\pi \Sigma_{\forall k}\delta(w-w_0-2\pi k)$, hence\\
+    $H(e^{jw})=\frac{1}{2}(2\pi \Sigma_{\forall k }\delta(w-\pi-2\pi k )+2\pi\Sigma_{\forall k }\delta(w+\pi -2\pi k))=\pi( \Sigma_{\forall k }\delta(w-\pi-2\pi k )+\delta(w+\pi -2\pi k))$
+    \item %write the solution of q4c
+    $Y_d(e^{jw})=\frac{1}{2\pi}X_d(e^{jw})*H(e^{jw})\xrightarrow{convolution\ from\ -\pi \ to\ \pi}\frac{1}{2\pi}\pi(\Sigma_{\forall k}\delta(w-\pi)+\delta(w+\pi)) * X_d(e^{jw})$, just shift $X_d$ to right and left by $\pi$ and we get:\\
+    $Y_d(e^{jw})=\frac{w}{\pi}$ if $\frac{\pi}{2}\leq |w|\leq \frac{3\pi}{2}$, 0 otherwise\\
+    $Y_d(e^{jw})=X_d(e^{j(+2\pi)})$
+    \end{enumerate}
+
+
+\end{enumerate}
+\end{document}
+

@@ -1,0 +1,37 @@
+1 - It did not perform any DNS queries to resolve the IP address of http://ceng.metu.edu.tr This is because I visited that website before and its IP address is already known by the browser.
+2 - No11(0.788190) -> No28(0.951224) -> No36(0.953771) -> No37(0.953858) -> No44(0.955800)
+3 - I added both programming languages and speaking languages since I don't know which one you want
+	User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36
+	Accept: text/css,*/*;q=0.1
+	Accept-Language: en-US,en;q=0.9,tr;q=0.8,ja;q=0.7
+4 - No I have not sent any cookie request in the first HTTP request to server 
+5 - Easy way ==> right click->follow->TCP stream(or http stream depending on what you are looking for)
+	Long way ==> click on the response/request, enlarge the "Transmission Control Protocol"(TCP) list. The stream index of request will be the same as the stream index of the response.
+6 - I set the source to my ip, destination to websites ip and started counting SYN's and FIN's in tcp's since SYN's indicate start of a connection and FIN indicates end.(tcp and ip.src_host == 144.122.107.192 and ip.dst_host == 144.122.145.146). The list of stream indices opening and closing is as follows:
+	stream index / action
+	0<- open
+	1<- open
+	2<- open
+	3<- open
+	4<- open
+	1<- close
+	5<- open
+	3<- close
+	6<- open
+	7<- open
+	2<- close
+	4<- close
+	8<- open
+	9<- open
+	5<- close
+	10<- open
+	9<- close
+	11<- open
+	7<- close
+	12<- open
+	12<- close
+	13<- open
+	11<- close
+	14<- open
+	...close one then open another(if needed)
+	We can clearly see that after opening 9th stream index's connection we only open a connection after we close one connection. The most number of connections active at one time is 6, hence number of parrallel connections is 6.

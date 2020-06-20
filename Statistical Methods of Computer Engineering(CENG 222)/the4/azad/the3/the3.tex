@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amsmath}
+
+
+\usepackage[hmargin=3cm,vmargin=6.0cm]{geometry}
+%\topmargin=0cm
+\topmargin=-2cm
+\addtolength{\textheight}{6.5cm}
+\addtolength{\textwidth}{2.0cm}
+%\setlength{\leftmargin}{-5cm}
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+
+%misc libraries goes here
+\usepackage{tikz}
+\usetikzlibrary{automata,positioning}
+
+\begin{document}
+
+\noindent
+\HRule \\[3mm]
+\begin{flushright}
+
+                                         \LARGE \textbf{CENG 222}  \\[4mm]
+                                         \Large Statistical Methods for Computer Engineering \\[4mm]
+                                        \normalsize      Spring '2017-2018 \\
+                                           \Large   Take Home Exam 1 \\
+                    \normalsize Deadline: May 25, 23:59 \\
+                    \normalsize Submission: via COW
+\end{flushright}
+\HRule
+
+\section*{Student Information }
+%Write your full name and id number between the colon and newline
+%Put one empty space character after colon and before newline
+Full Name :Onur ARI  \\
+Id Number :2171239  \\
+
+% Write your answers below the section tags
+\section*{Answer 1}
+First of all, we should find the probability of W$\geq$ 2S for a minion by integration as following:\\
+
+$\int_{0}^{\infty}\int_{0}^{w/2} ws e^{(-w-s)}dsdw$ = 0.259259 \\
+Size is calculated in the code.	\\
+The first loop iterates N times and the inner loop iterates for each randomly picked Poisson random variable.
+And for each minion ,again randomly picked U, we decide whether this particular minion satisfies the condition W$\geq$ 2S.
+Eventually ,for estimation we should sum up all the values and divide them to N. $ \widetilde{=} 0.26 $
+
+
+
+\section*{Answer 2}
+Marginal pdf of $f_w$ can be found as:\\
+$f_w$ = $\int_{0}^{\infty} ws e^{(-w-s)}ds$ = $w.e^{-w}$ (equivalent to f in the code)
+
+Since integral of $f_w$ is not easily computable, and it is continuous , it is valid to use "Rejection Method" here.\\
+$f_w$'(1) = 0 , and f(1) = $\frac{1}{e}$ (Max value of $f_w$) which is picked as $limit_c$.\\
+$limit_a = 0$(obvious) $limit_b = 10$ ($f_w$(10)$ \leq$ 0.001 ,so it is safe to be chosen).\\
+By using these limits, we can pick random (W,S) values for each minion in a Poisson distribution.\\
+If we apply this process for N times, then we get an estimation of 40 weight.(Detailed explanation in the code)\\
+
+
+
+
+\section*{Answer 3}
+
+A and B are randomly picked according to exp(2) and normal(0,1) respectively. This process is done for N times(found in Q1). Then to find expected
+value , total value is divided by N. It is found as $ \widetilde{=} 1.2 $ 
+
+
+
+
+\end{document}
