@@ -1,0 +1,4 @@
+﻿Category;Category Title;Absolute Frequency;Relative Frequency;Category occurs in N documents;Category occurs in % of all documents
+C1;small remark;2;0.500;1;1.000
+C2;medium remark;1;0.250;1;1.000
+C3;big remark;1;0.250;1;1.000

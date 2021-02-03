@@ -1,0 +1,10 @@
+﻿Name;Definition;Anchor examples;Coding rules
+B1: Understanding what is going on;If player wants a feature to understand what has happened;"""I don't know what I am picking up""";
+B2: Wanting something to change slightly;If player wants a slight change in something;I wish the swing was a bit faster;
+B3: Wanting something to change considerably;If player wants something to change completely or mostly;I wish there were no enemies since I don't have a health.;
+B4: Intuition failures(immersion breaker);If player wants  to do an action but fails to do so since the world doesn't allow it.;Player tries to break a stone that looks breakable but can't.;
+B5: Immersion improvements;If player thinks something is ruining the immersion;The sun is not moving smoothly;
+B6: World changing;If player wants something to change in the world;I want to find secrets behind walls;
+B7: Progress/Pace;Player requests based on progress/pace of the game;I want to know the item I picked up is a main quest item;
+B8: Bug fixes;If player wants a bug fixed;The positioning is off after placing a tile.;Only mark when player thinks it needs to be fixed quickly
+B9: Not knowing what can be done;If player doesn't realize what can be done, doesn't know what he should do.;I didn't realize I could use scroll wheel for this.;"Also include ""I don't know how to ..."" type of content"

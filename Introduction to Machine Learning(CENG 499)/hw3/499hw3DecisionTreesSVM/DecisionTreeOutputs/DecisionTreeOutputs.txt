@@ -1,0 +1,5 @@
+infoGain tree accuracy= 0.9525462962962963
+gainRatio tree accuracy= 0.9560185185185185
+averageGiniIndex tree accuracy= 0.9525462962962963
+gain ratio pre pruned tree accuracy= 0.9502314814814815
+gain ratio post pruned tree accuracy= 0.9513888888888888

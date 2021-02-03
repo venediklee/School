@@ -1,0 +1,15 @@
+- players wants item name shown when picking items etc.
+- player wants faster swing in, maybe slower swing out.
+- player DID not realize he can use mouse wheel to scroll through elements.
+- player likes different colors for stone and iron. He points out that having different shapes for different material sources would be nice.
+- left alone stones look like they can be breakable, this could be due to the rocks leaving a space in between them when placed diagonally.
+- smoothing sun transition would be nice.
+- finding different material sources makes player happy
+- player wants to find secrets behind walls etc.
+- player likes each island having a unique personality.
+- player wants mysteries in some islands(having a pit to fall into in one of the islands)
+- player does not want an enemy since this is a "casual" game and there is no health.
+- player want to know progress has been made when picking a crucial item(ship part).
+- player wants new things to use when progressing in the game(and wants to know if he can use them).
+- the positioning bug after placing a tile is annoying to player.
+- player likes the style of the game(espacially underwater).

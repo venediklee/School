@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "499hw4NaiveBayesHMM", "499hw4NaiveBayesHMM.pyproj", "{1F3CD8E2-829C-4DB5-A443-EABC5FC5F96E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F3CD8E2-829C-4DB5-A443-EABC5FC5F96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F3CD8E2-829C-4DB5-A443-EABC5FC5F96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB9515CE-0FE2-4205-A5CA-F3F1C9B4D25D}
+	EndGlobalSection
+EndGlobal
