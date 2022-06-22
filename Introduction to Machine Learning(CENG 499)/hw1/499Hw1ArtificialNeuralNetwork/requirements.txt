@@ -6,7 +6,7 @@ future==0.18.2
 gridworld==0.1
 gym==0.17.1
 install==1.3.4
-numpy==1.18.2
+numpy==1.22.0
 Pillow==8.1.1
 pip==20.2.4
 pyglet==1.5.0
